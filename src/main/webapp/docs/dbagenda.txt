@@ -1,0 +1,20 @@
+CREATE DATABASE dbagenda
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+COMMENT ON DATABASE dbagenda
+    IS 'Banco de dados para praticar a criação de uma agenda junto ao Professor José de Assis.';
+
+CREATE TABLE public.contatos
+(
+    id serial NOT NULL,
+    nome character varying(100) NOT NULL,
+    fone character varying(15) NOT NULL,
+    email character varying(100),
+    CONSTRAINT pk_contato PRIMARY KEY (id)
+);
+
+ALTER TABLE public.contatos
+    OWNER to postgres;
